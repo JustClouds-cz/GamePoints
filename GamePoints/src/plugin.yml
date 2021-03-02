@@ -1,0 +1,40 @@
+main: su.nightexpress.gamepoints.GamePoints
+version: 1.1.0
+name: GamePoints
+author: NightExpress
+desciption: Adds additional currency with internal GUI shop.
+depend: [NexEngine]
+softdepend: [PlaceholderAPI]
+api-version: 1.14
+permissions:
+#--------------------------------------------------------#
+  gamepoints.admin:
+    description: Full plugin access.
+    default: op
+    children:
+      gamepoints.user: true
+      gamepoints.cmd: true
+      gamepoints.store: true
+#--------------------------------------------------------#
+  gamepoints.user:
+    description: User access.
+    default: true
+#--------------------------------------------------------#
+  gamepoints.cmd:
+    description: Access to all plugin commands.
+    default: op
+    children:
+      gamepoints.cmd.pay: true
+  gamepoints.cmd.pay:
+    description: Access to /gp pay command.
+    default: op
+#--------------------------------------------------------#
+  gamepoints.store:
+    description: Full store access.
+    default: op
+    children:
+      gamepoints.store.*: true
+  gamepoints.store.*:
+    description: Access to all stores.
+    default: op
+#--------------------------------------------------------#

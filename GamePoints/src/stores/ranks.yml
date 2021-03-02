@@ -1,0 +1,92 @@
+title: '» Rank Store «'
+size: 27
+name: '&bRanks'
+need-permission: false
+
+items:
+  
+  rank-vip:
+    cost: 50
+    one-time-buy: true
+    priority: 10
+    inheritance-item: []
+    inheritance-price: []
+    icon:
+      name: '&dVIP Rank'
+      material: 'STONE_PICKAXE'
+      lore:
+      - '&7Example rank lore...'
+      - '&fPlaceholderAPI &7is supported here!'
+      - '&8'
+      - '&6Default Price: &e%cost% Points'
+      - '&6Your Price: &a&n%cost-inherited% Points'
+      - ''
+      - '%can-buy%'
+      item-flags:
+      - '*'
+    commands:
+    - '[CONSOLE] broadcast &b%player% &7just bought the &dVIP Rank&7!'
+    - '[CONSOLE] pex user %player% group set VIP'
+    store-slot: 10
+  
+  rank-premium:
+    cost: 150
+    one-time-buy: true
+    priority: 20
+    inheritance-item: []
+    inheritance-price:
+    - rank-vip
+    icon:
+      name: '&aPremium Rank'
+      material: 'IRON_PICKAXE'
+      lore:
+      - '&7Example rank lore...'
+      - '&fPlaceholderAPI &7is supported here!'
+      - '&8'
+      - '&6Default Price: &e%cost% Points'
+      - '&6Your Price: &a&n%cost-inherited% Points'
+      - ''
+      - '%can-buy%'
+      item-flags:
+      - '*'
+    commands:
+    - '[CONSOLE] broadcast &b%player% &7just bought the &aPremium Rank&7!'
+    - '[CONSOLE] pex user %player% group set Premium'
+    store-slot: 11
+  
+  rank-ultra:
+    cost: 300
+    one-time-buy: true
+    priority: 30
+    inheritance-item: []
+    inheritance-price:
+    - rank-vip
+    - rank-premium
+    icon:
+      name: '&bUltra Rank'
+      material: 'DIAMOND_PICKAXE'
+      lore:
+      - '&7Example rank lore...'
+      - '&fPlaceholderAPI &7is supported here!'
+      - '&8'
+      - '&6Default Price: &e%cost% Points'
+      - '&6Your Price: &a&n%cost-inherited% Points'
+      - ''
+      - '%can-buy%'
+      item-flags:
+      - '*'
+    commands:
+    - '[CONSOLE] broadcast &b%player% &7just bought the &bUltra Rank&7!'
+    - '[CONSOLE] pex user %player% group set Ultra'
+    store-slot: 12
+
+content:
+  filler:
+    material: BLACK_STAINED_GLASS_PANE
+    name: '&7'
+    slots: 0,1,2,3,4,5,6,7,8,9,17,18,19,20,21,23,24,25,26
+  return:
+    material: 'BARRIER'
+    name: '&cReturn'
+    slots: '22'
+    type: RETURN
